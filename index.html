@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YaRAG - Yet Another RAG Solution</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="presentation-container">
+        <!-- Title Slide -->
+        <section class="slide active" id="title">
+            <div class="slide-content">
+                <h1>YaRAG</h1>
+                <h2>Yet Another RAG Solution</h2>
+                <p>Accelerating Technical Documentation Search & Summarization</p>
+            </div>
+        </section>
+
+        <!-- Team Slide -->
+        <section class="slide" id="team">
+            <div class="slide-content">
+                <h2>Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="images/photo_2024-08-12_16-56-16.jpg" alt="Zhgutov Kirill">
+                        </div>
+                        <h3>Zhgutov Kirill</h3>
+                        <p>CTO</p>
+                        <p>Technical Architecture & AI Research</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="images/photo_2025-03-30_15-31-30-3.jpg" alt="Krekhov Nikolai">
+                        </div>
+                        <h3>Krekhov Nikolai</h3>
+                        <p>CEO</p>
+                        <p>Strategic Vision & Brand Strategy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Slide -->
+        <section class="slide" id="problem">
+            <div class="slide-content">
+                <h2>The Problem</h2>
+                <div class="problem-container">
+                    <div class="problem-icon"><i class="fas fa-search"></i></div>
+                    <div class="problem-text">
+                        <h3>Information Overload</h3>
+                        <p>Companies struggle with rapidly growing volumes of technical documentation</p>
+                    </div>
+                </div>
+                <div class="problem-container">
+                    <div class="problem-icon"><i class="fas fa-clock"></i></div>
+                    <div class="problem-text">
+                        <h3>Time Inefficiency</h3>
+                        <p>Engineers spend 30% of their workday searching for relevant information</p>
+                    </div>
+                </div>
+                <div class="problem-container">
+                    <div class="problem-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="problem-text">
+                        <h3>Knowledge Silos</h3>
+                        <p>Critical information remains trapped in scattered documents and systems</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Slide -->
+        <section class="slide" id="solution">
+            <div class="slide-content">
+                <h2>Our Solution</h2>
+                <div class="solution-container">
+                    <div class="solution-image">
+                        <i class="fas fa-robot solution-icon"></i>
+                    </div>
+                    <div class="solution-details">
+                        <h3>YaRAG: AI-Powered Documentation Search</h3>
+                        <ul>
+                            <li>Advanced Retrieval Augmented Generation (RAG) Technology</li>
+                            <li>Direct Q&A Interface for Technical Documentation</li>
+                            <li>Source-Verified Information Retrieval</li>
+                            <li>Delivered as a Fully-Managed Service</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Analysis Slide -->
+        <section class="slide" id="market">
+            <div class="slide-content">
+                <h2>Market Analysis</h2>
+                <div class="market-funnel">
+                    <div class="funnel-section tam">
+                        <h3>TAM</h3>
+                        <p>$60B</p>
+                        <small>Global Enterprise Knowledge Management Market</small>
+                    </div>
+                    <div class="funnel-section sam">
+                        <h3>SAM</h3>
+                        <p>$10B</p>
+                        <small>B2B Technical Documentation Management</small>
+                    </div>
+                    <div class="funnel-section som">
+                        <h3>SOM</h3>
+                        <p>$800M</p>
+                        <small>Initial Target: Tech, Manufacturing, Healthcare</small>
+                    </div>
+                </div>
+                <div class="competitive-advantage">
+                    <h3>Competitive Advantage</h3>
+                    <ul>
+                        <li>Source-verified answers with full citation</li>
+                        <li>No need for specialized AI expertise to set up</li>
+                        <li>Seamless integration with existing documentation systems</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competitors Slide -->
+        <section class="slide" id="competitors">
+            <div class="slide-content">
+                <h2>Competitive Landscape</h2>
+                <div class="competition-grid">
+                    <div class="competitor">
+                        <h3>Traditional Search Solutions</h3>
+                        <p class="weakness">Keyword-based, lacks context understanding</p>
+                        <p class="strength">Established market presence</p>
+                    </div>
+                    <div class="competitor">
+                        <h3>Generic AI Chatbots</h3>
+                        <p class="weakness">Not specialized for technical documentation</p>
+                        <p class="strength">User-friendly interfaces</p>
+                    </div>
+                    <div class="competitor">
+                        <h3>Custom RAG Solutions</h3>
+                        <p class="weakness">Requires AI expertise to implement</p>
+                        <p class="strength">Highly customizable</p>
+                    </div>
+                    <div class="competitor highlighted">
+                        <h3>YaRAG</h3>
+                        <p class="advantage">Specialized for technical documentation</p>
+                        <p class="advantage">Source verification built-in</p>
+                        <p class="advantage">Managed service with no AI expertise required</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SWOT Analysis Slide -->
+        <section class="slide" id="swot">
+            <div class="slide-content">
+                <h2>SWOT Analysis</h2>
+                <div class="swot-container">
+                    <div class="swot-item strengths">
+                        <h3>Strengths</h3>
+                        <ul>
+                            <li>Specialized RAG technology for technical documentation</li>
+                            <li>Managed service requiring minimal client setup</li>
+                            <li>Built-in citation and verification</li>
+                        </ul>
+                    </div>
+                    <div class="swot-item weaknesses">
+                        <h3>Weaknesses</h3>
+                        <ul>
+                            <li>New entrant in established market</li>
+                            <li>Limited initial language support</li>
+                            <li>Dependency on LLM providers</li>
+                        </ul>
+                    </div>
+                    <div class="swot-item opportunities">
+                        <h3>Opportunities</h3>
+                        <ul>
+                            <li>Growing enterprise documentation challenge</li>
+                            <li>Increasing adoption of AI solutions</li>
+                            <li>Expansion into additional languages and industries</li>
+                        </ul>
+                    </div>
+                    <div class="swot-item threats">
+                        <h3>Threats</h3>
+                        <ul>
+                            <li>Rapid AI technology evolution</li>
+                            <li>Large tech companies entering the space</li>
+                            <li>Data privacy regulations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feasibility Study Slide -->
+        <section class="slide" id="feasibility">
+            <div class="slide-content">
+                <h2>Feasibility Study</h2>
+                <div class="feasibility-container">
+                    <div class="feasibility-item">
+                        <h3>Technical Feasibility</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%;">85%</div>
+                        </div>
+                        <p>RAG technology proven in production environments</p>
+                    </div>
+                    <div class="feasibility-item">
+                        <h3>Economic Feasibility</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 80%;">80%</div>
+                        </div>
+                        <p>Strong ROI for clients through time savings</p>
+                    </div>
+                    <div class="feasibility-item">
+                        <h3>Operational Feasibility</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%;">90%</div>
+                        </div>
+                        <p>Seamless integration with existing workflows</p>
+                    </div>
+                    <div class="feasibility-item">
+                        <h3>Schedule Feasibility</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%;">75%</div>
+                        </div>
+                        <p>MVP ready within 6 months, full launch in 12 months</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Financing Slide -->
+        <section class="slide" id="financing">
+            <div class="slide-content">
+                <h2>Monetization Model</h2>
+                <div class="pricing-model">
+                    <div class="pricing-tier">
+                        <h3>Subscription Tiers</h3>
+                        <ul>
+                            <li>Standard: $2,500/month (up to 10,000 pages)</li>
+                            <li>Professional: $5,000/month (up to 50,000 pages)</li>
+                            <li>Enterprise: Custom pricing</li>
+                        </ul>
+                    </div>
+                    <div class="revenue-projections">
+                        <h3>5-Year Revenue Projection</h3>
+                        <div class="chart-container">
+                            <div class="chart-bar" style="height: 20%;">Y1</div>
+                            <div class="chart-bar" style="height: 40%;">Y2</div>
+                            <div class="chart-bar" style="height: 70%;">Y3</div>
+                            <div class="chart-bar" style="height: 85%;">Y4</div>
+                            <div class="chart-bar" style="height: 100%;">Y5</div>
+                        </div>
+                        <div class="chart-labels">
+                            <span>$3M</span>
+                            <span>$9M</span>
+                            <span>$24M</span>
+                            <span>$44M</span>
+                            <span>$70M</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="funding-needs">
+                    <h3>Funding Requirements</h3>
+                    <p>Seeking $2.5M seed round for:</p>
+                    <ul>
+                        <li>Engineering team expansion</li>
+                        <li>Infrastructure development</li>
+                        <li>Initial marketing and sales</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap Slide -->
+        <section class="slide" id="roadmap">
+            <div class="slide-content">
+                <h2>Roadmap</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Q3 2025</div>
+                        <div class="timeline-content">
+                            <h3>Research & Development</h3>
+                            <p>RAG technology validation for technical documentation</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Q1 2026</div>
+                        <div class="timeline-content">
+                            <h3>MVP Launch</h3>
+                            <p>Beta with 5 initial clients</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Q3 2026</div>
+                        <div class="timeline-content">
+                            <h3>Full Product Release</h3>
+                            <p>General availability with expanded features</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2027</div>
+                        <div class="timeline-content">
+                            <h3>Market Expansion</h3>
+                            <p>Additional industries and language support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Management Slide -->
+        <section class="slide" id="management">
+            <div class="slide-content">
+                <h2>Project Management Approach</h2>
+                <div class="management-approach">
+                    <div class="approach-item selected">
+                        <h3>Agile with Scrum</h3>
+                        <div class="approach-details">
+                            <p>Selected for YaRAG development due to:</p>
+                            <ul>
+                                <li>Fast-paced AI technology landscape</li>
+                                <li>Need for iterative client feedback</li>
+                                <li>Complex technical requirements</li>
+                                <li>2-week sprint cycles with regular demos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="approach-comparison">
+                        <div class="comparison-item">
+                            <h4>Kanban</h4>
+                            <p>Used for ongoing operations and maintenance</p>
+                        </div>
+                        <div class="comparison-item">
+                            <h4>Waterfall</h4>
+                            <p>Not suitable due to evolving requirements</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Plan Slide -->
+        <section class="slide" id="business-plan">
+            <div class="slide-content">
+                <h2>Business Plan</h2>
+                <div class="business-plan-grid">
+                    <div class="plan-item">
+                        <h3>Go-to-Market Strategy</h3>
+                        <ul>
+                            <li>Initial focus on tech, manufacturing, healthcare</li>
+                            <li>Direct sales to enterprise clients</li>
+                            <li>Industry conference presentations</li>
+                        </ul>
+                    </div>
+                    <div class="plan-item">
+                        <h3>Client Acquisition</h3>
+                        <ul>
+                            <li>30-day free trial program</li>
+                            <li>Implementation support included</li>
+                            <li>Customer success team for onboarding</li>
+                        </ul>
+                    </div>
+                    <div class="plan-item">
+                        <h3>Scaling Strategy</h3>
+                        <ul>
+                            <li>Strategic partnerships with documentation tools</li>
+                            <li>API-first approach for integrations</li>
+                            <li>Community building around technical content management</li>
+                        </ul>
+                    </div>
+                    <div class="plan-item">
+                        <h3>Revenue Goals</h3>
+                        <ul>
+                            <li>Break-even by Q2 2027</li>
+                            <li>50% YoY growth target 2027-2029</li>
+                            <li>Target 500 enterprise clients by 2029</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Thank You Slide -->
+        <section class="slide" id="thank-you">
+            <div class="slide-content">
+                <h1>Thank You!</h1>
+                <h3>YaRAG</h3>
+                <p>Transforming Technical Documentation Search</p>
+                <div class="contact-info">
+                    <p>Contact: info@yarag.ai</p>
+                    <p>Website: www.yarag.ai</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Controls -->
+        <div class="controls">
+            <button id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <div id="slide-counter">1 / 12</div>
+            <button id="next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

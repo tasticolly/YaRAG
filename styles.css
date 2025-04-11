@@ -1,0 +1,784 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    overflow: hidden;
+}
+
+.presentation-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* Slide Styles */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    background: linear-gradient(135deg, #ffffff, #f5f5f5);
+    padding: 2rem;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+.slide-content {
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Title Slide */
+#title {
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    color: white;
+}
+
+#title .slide-content {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+}
+
+#title h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+#title h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+#title p {
+    font-size: 1.2rem;
+}
+
+/* Team Slide */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-photo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 3px solid #4b6cb7;
+}
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #4b6cb7;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* Problem Slide */
+.problem-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.problem-icon {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4b6cb7;
+    background-color: rgba(75, 108, 183, 0.1);
+    border-radius: 50%;
+    margin-right: 1.5rem;
+}
+
+.problem-text h3 {
+    margin-bottom: 0.5rem;
+    color: #4b6cb7;
+}
+
+/* Solution Slide */
+.solution-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .solution-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.solution-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.solution-icon {
+    font-size: 6rem;
+    color: #4b6cb7;
+}
+
+.solution-details {
+    flex: 2;
+}
+
+.solution-details h3 {
+    margin-bottom: 1rem;
+    color: #4b6cb7;
+}
+
+.solution-details ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+.solution-details li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Market Analysis Slide */
+.market-funnel {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.market-funnel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    bottom: 0;
+    background: linear-gradient(to bottom, #4b6cb7 0%, #182848 100%);
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.funnel-section {
+    text-align: center;
+    padding: 1rem;
+    width: 30%;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.funnel-section h3 {
+    color: #4b6cb7;
+    margin-bottom: 0.5rem;
+}
+
+.funnel-section p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.funnel-section small {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.tam {
+    background-color: #e3f2fd;
+}
+
+.sam {
+    background-color: #bbdefb;
+}
+
+.som {
+    background-color: #90caf9;
+}
+
+.competitive-advantage {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.competitive-advantage h3 {
+    color: #4b6cb7;
+    margin-bottom: 1rem;
+}
+
+.competitive-advantage ul {
+    padding-left: 1.5rem;
+}
+
+.competitive-advantage li {
+    margin-bottom: 0.5rem;
+}
+
+/* Competitors Slide */
+.competition-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.competitor {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.competitor h3 {
+    color: #4b6cb7;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.competitor p {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.weakness {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.strength {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.advantage {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+}
+
+.highlighted {
+    border: 2px solid #4b6cb7;
+    background-color: #e3f2fd;
+}
+
+/* SWOT Analysis Slide */
+.swot-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.swot-item {
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.swot-item h3 {
+    margin-bottom: 1rem;
+}
+
+.swot-item ul {
+    padding-left: 1.5rem;
+}
+
+.swot-item li {
+    margin-bottom: 0.5rem;
+}
+
+.strengths {
+    background-color: #e8f5e9;
+}
+
+.strengths h3 {
+    color: #2e7d32;
+}
+
+.weaknesses {
+    background-color: #ffebee;
+}
+
+.weaknesses h3 {
+    color: #c62828;
+}
+
+.opportunities {
+    background-color: #e3f2fd;
+}
+
+.opportunities h3 {
+    color: #0d47a1;
+}
+
+.threats {
+    background-color: #fff3e0;
+}
+
+.threats h3 {
+    color: #e65100;
+}
+
+/* Feasibility Study Slide */
+.feasibility-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feasibility-item {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.feasibility-item h3 {
+    color: #4b6cb7;
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    height: 24px;
+    background-color: #ddd;
+    border-radius: 12px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(to right, #4b6cb7, #182848);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    transition: width 1s ease;
+}
+
+/* Financing Slide */
+.pricing-model {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .pricing-model {
+        flex-direction: row;
+    }
+}
+
+.pricing-tier,
+.revenue-projections {
+    flex: 1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-tier h3,
+.revenue-projections h3 {
+    color: #4b6cb7;
+    margin-bottom: 1rem;
+}
+
+.pricing-tier ul {
+    padding-left: 1.5rem;
+}
+
+.pricing-tier li {
+    margin-bottom: 0.5rem;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 200px;
+    margin-top: 1rem;
+}
+
+.chart-bar {
+    width: 18%;
+    background: linear-gradient(to top, #4b6cb7, #182848);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-radius: 4px 4px 0 0;
+    font-weight: bold;
+    transition: height 1s ease;
+}
+
+.chart-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.chart-labels span {
+    width: 18%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.funding-needs {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #e3f2fd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.funding-needs h3 {
+    color: #0d47a1;
+    margin-bottom: 0.5rem;
+}
+
+.funding-needs p {
+    margin-bottom: 0.5rem;
+}
+
+.funding-needs ul {
+    padding-left: 1.5rem;
+}
+
+.funding-needs li {
+    margin-bottom: 0.5rem;
+}
+
+/* Roadmap Slide */
+.timeline {
+    position: relative;
+    margin-top: 3rem;
+    padding-left: 50px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #4b6cb7;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -38px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #182848;
+    border: 4px solid white;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: #4b6cb7;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-content h3 {
+    color: #182848;
+    margin-bottom: 0.5rem;
+}
+
+/* Project Management Slide */
+.management-approach {
+    margin-top: 2rem;
+}
+
+.approach-item {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+}
+
+.approach-item.selected {
+    border: 2px solid #4b6cb7;
+    background-color: #e3f2fd;
+}
+
+.approach-item h3 {
+    color: #4b6cb7;
+    margin-bottom: 1rem;
+}
+
+.approach-details p {
+    margin-bottom: 0.5rem;
+}
+
+.approach-details ul {
+    padding-left: 1.5rem;
+}
+
+.approach-details li {
+    margin-bottom: 0.5rem;
+}
+
+.approach-comparison {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.comparison-item {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.comparison-item h4 {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+/* Business Plan Slide */
+.business-plan-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.plan-item {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.plan-item h3 {
+    color: #4b6cb7;
+    margin-bottom: 1rem;
+}
+
+.plan-item ul {
+    padding-left: 1.5rem;
+}
+
+.plan-item li {
+    margin-bottom: 0.5rem;
+}
+
+/* Thank You Slide */
+#thank-you {
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    color: white;
+}
+
+#thank-you .slide-content {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+}
+
+#thank-you h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#thank-you h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+#thank-you p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+/* Controls */
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+#prev-btn,
+#next-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #4b6cb7;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+    color: #182848;
+}
+
+#slide-counter {
+    margin: 0 1rem;
+    font-weight: bold;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .slide-content {
+        max-width: 95%;
+        padding: 0.5rem;
+    }
+
+    .competition-grid,
+    .swot-container,
+    .business-plan-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #title h1 {
+        font-size: 3rem;
+    }
+
+    #title h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Print Styling for PowerPoint Conversion */
+@media print {
+
+    body,
+    html,
+    .presentation-container {
+        height: auto;
+        overflow: auto;
+    }
+
+    .slide {
+        position: relative;
+        page-break-after: always;
+        page-break-inside: avoid;
+        opacity: 1;
+        transform: none;
+        transition: none;
+        height: 100vh;
+    }
+
+    .controls {
+        display: none;
+    }
+}
