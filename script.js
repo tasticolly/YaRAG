@@ -102,6 +102,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 bar.style.height = height;
             }, 100);
         });
+
+        // Animate agenda items if they exist in the current slide
+        if (currentSlide.id === 'agenda') {
+            const agendaItems = currentSlide.querySelectorAll('.agenda-item');
+            agendaItems.forEach((item, i) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-20px)';
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, i * 100);
+            });
+        }
     }
 
     // Print functionality for PowerPoint conversion
